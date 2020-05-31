@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{ ClienteService } from '../cliente.service'
+import { ClienteService } from '../../services/domain/cliente.service'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-novo-cliente',
@@ -13,24 +14,19 @@ export class NovoClienteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  incluirNovoCliente(event){
+  incluirNovoCliente(event) {
     event.preventDefault()
     const alvo = event.target
     const nome = alvo.querySelector('#nome').value
     const cpf = alvo.querySelector('#cpf').value
-    const dataNascimento = alvo.querySelector('#dataNascimento').value
-    this.clienteServico.inserirNovoCliente(nome,cpf,dataNascimento).subscribe(
-      data =>{
-        //console.log(data)
-        if(data == null){
-          //voltar para a tela de clientes
-          window.alert("Cliente inserido com sucesso!")
-        }else{
-          window.alert("Dados inválidos!")
-        }
+    const dataNascimento = new Date(alvo.querySelector('#dataNascimento').value)
+    const dataNascimentoFormatada = dataNascimento.getFullYear() + "-" + dataNascimento.getMonth() + "-" + dataNascimento.getDay()
+    this.clienteServico.inserirNovoCliente(nome, cpf, dataNascimento).subscribe(
+      response => {
+        window.alert("Cliente inserido com sucesso!")
+      }, error => {
+        console.log(error)
       }
     )
-    console.log(nome,cpf)
   }
-
 }

@@ -1,3 +1,6 @@
-<body>
-    <a mat-button routerLink="/novoCliente">Novo cliente</a>
-</body>
+<mat-selection-list #cliente [multiple]="false">
+    <mat-list-option *ngFor="let cliente of clientes">
+      {{cliente.nome}}
+    </mat-list-option>
+  </mat-selection-list>
+<a mat-raised-button routerLink="/novoCliente">Novo cliente</a>

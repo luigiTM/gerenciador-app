@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from 'src/services/domain/cliente.service';
+import { ClienteDTO } from 'src/models/cliente.dto';
 
 @Component({
   selector: 'app-cliente',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor() { }
+  clientes : ClienteDTO[];
 
-  ngOnInit(): void {
+  constructor(
+    public clienteService: ClienteService
+  ) { }
+
+  ngOnInit(): void { }
+
+  ngAfterViewInit() {
+    this.clienteService.buscarTodos().subscribe(response => {
+      this.clientes = response
+    },
+      error => {
+        console.log(error)
+      })
   }
 
 }

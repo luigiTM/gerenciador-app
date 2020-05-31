@@ -1,18 +1,20 @@
 <form (submit)="incluirNovoCliente($event)">
-    <mat-form-field appearance="fill">
-        <input matInput placeholder="Nome" required id="nome">
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-        <input matInput placeholder="CPF" required id="cpf">
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <mat-label>Data de nascimento</mat-label>
-        <input matInput [matDatepicker]="picker" id="dataNascimento">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <br>
-    <input type="submit" value="Incluir novo cliente">
+    <div>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Nome" required id="nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="CPF" required id="cpf">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" id="dataNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <input class="botao" type="submit" value="Incluir novo cliente">
+    </div>
 </form>
