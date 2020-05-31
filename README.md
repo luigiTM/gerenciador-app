@@ -1,13 +1,15 @@
 # gerenciador-app
 
-# Tecnologias usadas
+Aplicação para gerenciamento de clientes, produtos e pedidos
+
+## Tecnologias usadas
   -Angular 9.1.7
   
   -Visual Studio Code
   
   -NodeJS
   
-  # Execução do projeto
+## Execução do projeto
   
   Primeiramente é necessário editar o arquivo `proxyconfig.json` com a url da API a ser usada.
   
