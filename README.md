@@ -16,3 +16,17 @@ Aplicação para gerenciamento de clientes, produtos e pedidos
   Executar o comando `npm start` na pasta do projeto.
   
   Navegar até `http://localhost:4200` para visualizar a aplicação.
+  
+  Será exibida a página inicial, no menu superior será possível acessar o gerenciamento de cliente, produtos e pedidos.
+  
+## Cliente
+  
+Ao acessar a página será listada todos os clientes, é possível incluir um novo cliente no botão `Novo CLiente`.
+  
+## Produto
+  
+Não finalizado
+  
+## Pedido
+
+Não finalizado
