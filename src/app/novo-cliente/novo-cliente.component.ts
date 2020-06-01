@@ -18,7 +18,8 @@ export class NovoClienteComponent implements OnInit {
     event.preventDefault()
     const alvo = event.target
     const nome = alvo.querySelector('#nome').value
-    const cpf = alvo.querySelector('#cpf').value
+    const cpf = alvo.querySelector('#cpf').value.replace("-","").split(".").join("")
+    console.log(cpf)
     const dataNascimento = new Date(alvo.querySelector('#dataNascimento').value)
     const dataNascimentoFormatada = dataNascimento.getFullYear() + "-" + dataNascimento.getMonth() + "-" + dataNascimento.getDay()
     this.clienteServico.inserirNovoCliente(nome, cpf, dataNascimento).subscribe(
